@@ -12,6 +12,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/gpl.html>
 
 ## Introduction
-Inspired by <https://create.arduino.cc/projecthub/cstram/apan-arduino-privacy-automatic-navigator-0c7c85>
+Uses `wget` to do random Google searches and retrieve random pages from Wikipedia.
 
-Runs on Raspberry Pi OS or probably many other Debian-based distros.
+Runs on Raspberry Pi OS and probably many other Debian-based distros.
+
+Run the script with the `-s` command-line argument to save the retrieved web pages to `/tmp/bpan` -- this is mostly for debugging and verification purposes.
+
+Run the script without command-line arguments and the retrieved web pages are sent to `/dev/null`.
+
+Inspired by <https://create.arduino.cc/projecthub/cstram/apan-arduino-privacy-automatic-navigator-0c7c85>
