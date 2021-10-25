@@ -13,3 +13,5 @@ You should have received a copy of the GNU General Public License along with thi
 
 ## Introduction
 Inspired by <https://create.arduino.cc/projecthub/cstram/apan-arduino-privacy-automatic-navigator-0c7c85>
+
+Runs on Raspberry Pi OS or probably many other Debian-based distros.

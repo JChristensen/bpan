@@ -18,10 +18,7 @@ usage()
 google()
 {
     # make a random string
-    # start with a random file name in the form /tmp/tmp.XXXXXXXXXX
-    rand=$(mktemp --dry-run)
-    # remove the first nine characters, leaving just XXXXXXXXXX
-    rand=${rand:9}
+    rand=$(mktemp --dry-run XXXXXXXXXX)
     
     url="https://www.google.com/search?q=$rand"
     if $SAVE_PAGES; then
