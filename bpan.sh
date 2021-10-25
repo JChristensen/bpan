@@ -24,7 +24,7 @@ google()
     if $SAVE_PAGES; then
         OUTPUT_FILE="$OUTPUT_DIR/g$(date +%Y%m%d-%H%M%S)"
     fi
-    wget --user-agent="" --output-document=$OUTPUT_FILE $url
+    wget -nv --user-agent="" --output-document=$OUTPUT_FILE $url
 }
 
 # retrieve a random wikipedia article
@@ -34,7 +34,7 @@ wiki()
     if $SAVE_PAGES; then
         OUTPUT_FILE="$OUTPUT_DIR/w$(date +%Y%m%d-%H%M%S)"
     fi
-    wget --user-agent="" --output-document=$OUTPUT_FILE $url
+    wget -nv --user-agent="" --output-document=$OUTPUT_FILE $url
 }
 
 # ==== MAIN SCRIPT STARTS HERE =========
