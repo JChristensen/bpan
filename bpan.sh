@@ -9,6 +9,7 @@ usage()
     PROGNAME=$(basename $0)
     echo -e "\n$PROGNAME usage: $PROGNAME [-h | -s]" >&2
     echo -e "\n  -h displays usage syntax." >&2
+    echo -e "  -q invokes wget in quiet mode, does not save browsed pages." >&2
     echo -e "  -s saves browsed pages to tmp directory." >&2
     echo -e "\n  Runs in an infinite loop, browsing random web sites.\n" >&2
     return
@@ -24,7 +25,7 @@ google()
     if $SAVE_PAGES; then
         OUTPUT_FILE="$OUTPUT_DIR/g$(date +%Y%m%d-%H%M%S)"
     fi
-    wget -nv --user-agent="" --output-document=$OUTPUT_FILE $url
+    wget $OPT1 $OPT2 --output-document=$OUTPUT_FILE $url
 }
 
 # retrieve a random wikipedia article
@@ -34,7 +35,7 @@ wiki()
     if $SAVE_PAGES; then
         OUTPUT_FILE="$OUTPUT_DIR/w$(date +%Y%m%d-%H%M%S)"
     fi
-    wget -nv --user-agent="" --output-document=$OUTPUT_FILE $url
+    wget $OPT1 $OPT2 --output-document=$OUTPUT_FILE $url
 }
 
 # ==== MAIN SCRIPT STARTS HERE =========
@@ -47,6 +48,8 @@ OUTPUT_DIR="/tmp/bpan"
 # ---- don't change these, please ------
 OUTPUT_FILE="/dev/null"
 SAVE_PAGES=false
+OPT1="--no-verbose"
+OPT2="--user-agent=\"\""
 # --------------------------------------
 
 # process command-line arguments
@@ -60,6 +63,8 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         -h) usage
             exit
+            ;;
+        -q) OPT1="--quiet"
             ;;
         -s) SAVE_PAGES=true
             # create the output directory if it doesn't exist
