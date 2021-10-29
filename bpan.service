@@ -1,8 +1,11 @@
 # This file is /home/$USER/.config/systemd/user/bpan.service
 # Where $USER is the user name the service will run under,
 # and /user/ is literally "/user/".
-# On the ExecStart line, replace UUUU with your user name, or
-# use the install-unit-files.sh script to do this automatically.
+# On the ExecStart line, replace UUUU with your user name.
+# The user must also be set for lingering in systemd, i.e.:
+# $ loginctl enable-linger $USER
+# The install-unit-files.sh script will edit the ExecStart line
+# and also set the user for lingering.
 
 [Unit]
 Description=Bash Privacy Automatic Navigator
