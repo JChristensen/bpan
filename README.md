@@ -29,17 +29,17 @@ Running the script without command-line arguments causes the retrieved web pages
 Inspired by <https://create.arduino.cc/projecthub/cstram/apan-arduino-privacy-automatic-navigator-0c7c85>
 
 ## Installation
-BPAN is scheduled to start and stop at any desired times via systemd and runs as a normal user (i.e. your user ID).
+BPAN runs as a normal user (i.e. your user ID) and is scheduled to start and stop at any desired times via systemd.
 
-Clone a copy of the project from GitHub so that it resides in /home/$USER/bpan:  
+Clone a copy of the repository from GitHub so that it resides in /home/$USER/bpan:  
 `$ git clone https://github.com/JChristensen/bpan`  
 
 Change to the bpan directory:  
 `$ cd bpan`
 
-Edit the `OnCalendar` line in the `bpan.timer` file for the desired start time.
+In the `bpan.timer` file, edit the `OnCalendar` line for the desired start time.
 
-Edit the `OnCalendar` line in the `bpan-stop.timer` file for the desired stop time.
+In the `bpan-stop.timer` file, edit the `OnCalendar` line for the desired stop time.
 
 Run the script to install the systemd unit files:  
 `$ ./install-unit-files.sh`
@@ -47,5 +47,5 @@ Run the script to install the systemd unit files:
 Run the script to start the BPAN services and timers:  
 `$ ./enable-bpan.sh`
 
-To suspend bpan operation, run the script:  
+To suspend BPAN operation, run the script:  
 `$ ./disable-bpan.sh`
