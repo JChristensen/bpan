@@ -1,0 +1,14 @@
+# This file is /home/$USER/.config/systemd/user/bpan-stop.service
+# Where $USER is the user name the service will run under,
+# and /user/ is literally "/user/".
+
+[Unit]
+Description=Stop the Bash Privacy Automatic Navigator
+
+[Service]
+Type=simple
+StandardOutput=journal
+ExecStart=systemctl --user stop bpan.service
+
+[Install]
+WantedBy=default.target

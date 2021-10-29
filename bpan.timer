@@ -1,0 +1,15 @@
+# This file is /home/$USER/.config/systemd/user/bpan.timer
+# Where $USER is the user name the service will run under.
+
+[Unit]
+Description=Schedule Bash Privacy Automatic Navigator
+
+[Timer]
+# start the service daily at the given time
+OnCalendar=*-*-* 22:00:00
+
+# the service to execute
+Unit=bpan.service
+
+[Install]
+WantedBy=timers.target

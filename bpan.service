@@ -1,0 +1,15 @@
+# This file is /home/$USER/.config/systemd/user/bpan.service
+# Where $USER is the user name the service will run under,
+# and /user/ is literally "/user/".
+
+[Unit]
+Description=Bash Privacy Automatic Navigator
+
+[Service]
+Type=simple
+StandardOutput=journal
+ExecStart=/home/UUUU/bpan/bpan.sh -s
+Restart=always
+
+[Install]
+WantedBy=default.target

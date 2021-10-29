@@ -1,0 +1,15 @@
+# This file is /home/$USER/.config/systemd/user/bpan-stop.timer
+# Where $USER is the user name the service will run under.
+
+[Unit]
+Description=Stop schedule for Bash Privacy Automatic Navigator
+
+[Timer]
+# start the service daily at the given time
+OnCalendar=*-*-* 23:00:00
+
+# the service to execute
+Unit=bpan-stop.service
+
+[Install]
+WantedBy=timers.target
