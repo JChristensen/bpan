@@ -13,7 +13,7 @@ Description=Bash Privacy Automatic Navigator
 [Service]
 Type=simple
 StandardOutput=journal
-ExecStart=/home/UUUU/bpan/bpan.sh -s
+ExecStart=/home/UUUU/bpan/bpan.sh
 Restart=always
 
 [Install]

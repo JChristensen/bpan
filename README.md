@@ -49,3 +49,9 @@ Run the script to start the BPAN services and timers:
 
 To suspend BPAN operation, run the script:  
 `$ ./disable-bpan.sh`
+
+To remove BPAN from the system, run the script:  
+`$ ./remove-bpan.sh`
+
+To show BPAN activity:  
+`$ journalctl --user-unit bpan.service`  
